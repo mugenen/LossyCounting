@@ -39,8 +39,7 @@ class LossyCounting(object):
                 yield (item, self.count[item])
     
     def iterateOverThresholdRate(self, threshold_rate):
-        for y in self.iterateOverThresholdCount(threshold_rate * self.N):
-            yield y
+        return self.iterateOverThresholdCount(threshold_rate * self.N)
     
 
 if __name__ == '__main__':
