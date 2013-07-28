@@ -1,0 +1,13 @@
+from pylab import *
+f = map(int, open('num_dict_naive.txt').read().split())
+plot(f)
+f = map(int, open('num_dict_lossy_v1e-6.txt').read().split())
+plot(f)
+f = map(int, open('num_dict_lossy_v1e-7.txt').read().split())
+plot(f)
+legend(['Naive', 'Lossy Counting($\epsilon=10^{-6}$)', 'Lossy Counting($\epsilon=10^{-7}$)'], loc='best')
+xlim(xmax=1061747)
+xticks(range(0, 1000001, 200000), range(0, 100000001, 20000000))
+#xlabel('#Items')
+#ylabel('#Dictionary Entries')
+savefig('chart_lossy_v.png', format='png')
